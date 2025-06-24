@@ -77,7 +77,7 @@ pub fn problem(
 
     match args[1].as_str() {
         "fuzz" => print!("{}", fuzz(seed)),
-        "solution" => print!("{}", (solution.expect("No solution method provided"))(seed)),
+        "solution" => println!("{}", (solution.expect("No solution method provided"))(seed)),
         "judge" => {
             let mut buffer = String::new();
             let _ = std::io::stdin().read_line(&mut buffer);
