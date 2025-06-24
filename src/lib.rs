@@ -62,6 +62,7 @@ pub fn problem(
     solution: Option<fn(u64) -> String>,
 ) {
     let args: Vec<_> = std::env::args().collect();
+
     let fail = |message: &str| {
         eprintln!("{}", message);
         std::process::exit(1);
