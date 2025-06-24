@@ -21,9 +21,9 @@ fuzzjudge_macro::main!(fuzz, judge);
 ```
 
 `main!` Arguments: 
-- fuzz: fn(u64) -> String,
-- judge: fn(u64, &str) -> Result<(), String>,
-- solution (optional): fn(u64) -> String,
+- fuzz: `fn(seed: u64) -> String`,
+- judge: `fn(seed: u64, input: &str) -> Result<(), String>`,
+- solution (optional): `fn(seed: u64) -> String`,
 
 ### prob.md
 

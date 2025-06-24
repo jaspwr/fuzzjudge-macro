@@ -17,6 +17,11 @@
 /// 
 /// fuzzjudge_macro::main!(fuzz, judge);
 /// ```
+///
+/// `main!` Arguments: 
+/// - fuzz: `fn(seed: u64) -> String`,
+/// - judge: `fn(seed: u64, input: &str) -> Result<(), String>`,
+/// - solution (optional): `fn(seed: u64) -> String`,
 /// 
 /// ### prob.md
 /// 
