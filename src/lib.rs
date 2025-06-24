@@ -76,12 +76,13 @@ pub fn problem(
     let seed = std::hash::Hasher::finish(&default_hasher);
 
     match args[1].as_str() {
-        "fuzz" => print!("{}", fuzz(seed)),
+        "fuzz" => println!("{}", fuzz(seed)),
         "solution" => println!("{}", (solution.expect("No solution method provided"))(seed)),
         "judge" => {
             let mut buffer = String::new();
             let _ = std::io::stdin().read_line(&mut buffer);
-            if let Err(e) = judge(seed, &buffer) {
+            let input = buffer.trim_end_matches('\n').trim_end_matches('\r').to_string();
+            if let Err(e) = judge(seed, &input) {
                 fail(&e);
             }
         }
